@@ -1,0 +1,184 @@
+pageData = {
+    "name": "James Robert Green",
+    "contactInformation": {
+        "address": "122 Castleton RD, London SE9 4DB",
+        "telephoneNumber": "07706440020",
+        "emailAddress": "jrgreen@gmail",
+    },
+    "workExperience": [
+        {
+        "company": "ION Trading",
+        "jobDetails":{
+            "fromDate": "Oct 2014",
+            "toDate": "Mar 2016",
+            "position": "Agile Developer for ETD ARC",
+            "positionDetails": [
+                {
+                    "text": "Analysing and writing specifications.",
+                },
+                {
+                    "text": "Creating and enhancing reports using SQL, Java and JasperReports including exchange and regulatory reports.",
+                },
+                {
+                    "text": "Updating ARC's common data model and ETL layer.",
+                },
+                {
+                    "text": "Maintaining Robot automated tests.",
+                },
+                {
+                    "text": "Configuring source systems RANsys and XTP with business scenarios for unit testing.",
+                },
+                {
+                    "text": "Certified Scrum Master (CSM – Scrum Alliance)",
+                },
+
+            ]
+            },
+        },
+        {
+        "company": "ION Trading (Formerly Rolfe and Nolan PLC)", 
+        "jobDetails":{
+            "fromDate": "Aug 2006",
+            "toDate": "Oct 2014",
+            "position": "Online Team Leader RANsys",
+            "positionDetails": [
+                {
+                    "text": "Enhancing and maintaining a financial derivatives back office system (RANsys).",
+                },                
+                {
+                    "text": "Lead programmer for a strategic integration project (RANsys and Fees Module).",
+                },                
+                {
+                    "text": "Reviewing the quality of colleagues work to ensure the changes are to the highest standard, efficient and maintainable.",
+                },
+                {
+                    "text": "Proficient in all aspects of the development life cycle:",
+                    "items":[
+                        {
+                            "text": "Writing specifications",
+                        },                
+                        {
+                            "text": "Coding",
+                        },
+                        {
+                            "text": "Unit testing",
+                        },
+                        {
+                            "text": "Documentation",
+                        }, 
+                    ]
+                },                
+                {
+                    "text": "Prioritising and scheduling projects.",
+                },
+                {
+                    "text": "Ensuring all projects are delivered on time with an emphasis on quality.",
+                },
+                {
+                    "text": "Overnight support of the software.",
+                },
+                {
+                    "text": "Training of new starters.",
+                },
+                {
+                    "text": "Experience in regression testing of upgrades for clients.",
+                }, 
+            ]
+            },
+        },
+    ],
+    "workSkills":[
+            {
+                "skillType": "Programming Specific",
+                "skillList":[
+                    {
+                        "text": "Over 10 years commercial programming experience:",
+                    },
+                    {
+                        "text": "Angular JS, HTML 5, CSS",
+                    },
+                    {
+                        "text": "Git, SVN, Grunt, node, bower",
+                    },
+                    {
+                        "text": "Java",
+                    },
+                    {
+                        "text": "Adobe Experience Manager (AEM) - Forms, aem mobile, sites.",
+                    },
+                    {
+                        "text": "SQL, JasperReports.",
+                    },
+                    {
+                        "text": "Android Studio, Gradle, Espresso",
+                    },
+                    {
+                        "text": "Vax Basic.",
+                    },
+                    {
+                        "text": "Compuware Uniface",
+                    },
+                ]
+            },
+            {
+                "skillType": "General Skills",
+                "skillList":[
+                    {
+                        "text": "Leadership",
+                    },
+                    {
+                        "text": "Excellent interpersonal skills.",
+                    },
+                    {
+                        "text": "Meticulous attention to detail.",
+                    },
+                    {
+                        "text": "Exceptional problem solving ability.",
+                    },
+                    {
+                        "text": "Knowledge of a variety of operating systems including Windows, Mac OS, Linux and OpenVMS.",
+                    },
+                ]
+            },
+        ],
+        "education":[
+                {
+                    "name":"Greenwich University – Medway",
+                    "fromDate":"2004",
+                    "toDate":"2006",
+                    "qualification":[
+                        {
+                            "text":"Upper second class degree ( 2:1 ) Computer Systems and Software Engineering (BEng Hons)",
+                        }
+                    ],
+                    "details":"The course consisted of programming in C/C++/Java, Operating Systems, Embedded Systems, Systems Programming, Management and Communication and Information and Network Security Engineering.",
+                },
+                {
+                    "name":"Bromley College",
+                    "fromDate":"2002",
+                    "toDate":"2004",
+                    "qualification":[
+                        {
+                            "text":"HND in Computer Systems Engineering with all courses passed at merit or distinction level.",
+                        }
+                    ]
+                },
+                {
+                    "name":"Chislehurst and Sidcup Grammar School, Kent",
+                    "fromDate":"1995",
+                    "toDate":"2002",
+                    "qualification":[
+                        {
+                            "name":"A-Level",
+                            "text":"4  A-C passes (Computing, Business Studies, German and Politics)",
+                        },
+                        {
+                            "name":"GCSE",
+                            "text":"11 A-C passes (including Computing, English and Maths)",
+                        },
+                    ]
+                },
+            ],
+            "personalInterests": "In my spare time I enjoy going to the gym, listening to music, learning German, watching films and socialising with friends. I enjoy cycling and for the last three years I have completed the London to Brighton bike ride to raise money for the British Heart Foundation. I enjoy learning new things, the latest of which is Android development and I have recently released my first app on the Google Play store.",
+        
+    }

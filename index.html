@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/CVController.js"></script>
+    <script src="data.json"></script>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <meta charset="UTF-8">
+    <title>CV</title>
+</head>
+
+<body ng-app="app" ng-controller="CVController" ng-cloak>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">{{data.name}}</h1> </div>
+                        <div class="panel-body">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Contact Information</h1> </div>
+                                <div class="panel-body">
+                                    <p>{{data.contactInformation.address}}</p>
+                                    <p>{{data.contactInformation.telephoneNumber}}</p>
+                                    <p>{{data.contactInformation.emailAddress}}</p>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Work Experience</h1> </div>
+                                <div class="panel-body">
+                                    <div ng-repeat="job in data.workExperience">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">{{job.company}}</h3> </div>
+                                            <div class="panel-body">
+                                                <p>{{job.jobDetails.fromDate}}</p>
+                                                <p>{{job.jobDetails.toDate}}</p>
+                                                <p>{{job.jobDetails.position}}</p>
+                                                <ul ng-repeat="details in job.jobDetails.positionDetails">
+                                                    <li>{{details.text}}</li>
+                                                    <ul ng-repeat="item in details.items">
+                                                        <li>{{item.text}}</li>
+                                                    </ul>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Work Skills</h1> </div>
+                                <div class="panel-body">
+                                    <div ng-repeat="skill in data.workSkills">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h1 class="panel-title">{{skill.skillType}}</h1> </div>
+                                            <div class="panel-body">
+                                                <ul ng-repeat="list in skill.skillList">
+                                                    <li>{{list.text}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Education</h1> </div>
+                                <div class="panel-body">
+                                    <div ng-repeat="edu in data.education">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h1 class="panel-title">{{edu.name}}</h1> </div>
+                                            <div class="panel-body">
+                                                <p>{{edu.fromDate}}</p>
+                                                <p>{{edu.toDate}}</p>
+                                                <div ng-repeat="qual in edu.qualification">
+                                                    <p>{{qual.name}}</p>
+                                                    <p>{{qual.text}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Personal Interests</h1> </div>
+                                <div class="panel-body">{{data.personalInterests}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
