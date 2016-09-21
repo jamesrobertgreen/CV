@@ -26,7 +26,7 @@
                 <h1>{{data.name}}</h1>
                 <div class="panel panel-primary">
                     <uib-accordion close-others="oneAtATime">
-                        <div uib-accordion-group class="panel-default" is-open="status.open">
+                        <div uib-accordion-group class="panel-default" is-open="!status.open">
                             <uib-accordion-heading>Contact Information <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
                             <div>
                                 <label>Address:</label> {{data.contactInformation.address}}</div>
