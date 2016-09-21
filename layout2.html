@@ -10,6 +10,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.3.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/CVController.js"></script>
     <script src="data.json"></script>
@@ -24,66 +25,77 @@
             <div class="col-md-12">
                 <h1>{{data.name}}</h1>
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">Contact Information</h2> </div>
-                    <div class="panel-body">
-                        <div>
-                            <label>Address:</label> {{data.contactInformation.address}}</div>
-                        <div>
-                            <label>Telphone Number:</label> <a href="tel:{{data.contactInformation.telephoneNumber}}">{{data.contactInformation.telephoneNumber}}</a></div>
-                        <div>
-                            <label>Email Address:</label> <a href="mailto:{{data.contactInformation.emailAddress}}">{{data.contactInformation.emailAddress}}</a></div>
-                    </div>
+                    <uib-accordion close-others="oneAtATime">
+                        <div uib-accordion-group class="panel-default" is-open="status.open">
+                            <uib-accordion-heading>Contact Information <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                            <div>
+                                <label>Address:</label> {{data.contactInformation.address}}</div>
+                            <div>
+                                <label>Telphone Number:</label> <a href="tel:{{data.contactInformation.telephoneNumber}}">{{data.contactInformation.telephoneNumber}}</a></div>
+                            <div>
+                                <label>Email Address:</label> <a href="mailto:{{data.contactInformation.emailAddress}}">{{data.contactInformation.emailAddress}}</a></div>
+                        </div>
+                    </uib-accordion>
                 </div>
-                <h2>Work Experience<button class="btn-primary pull-right" ng-click="changeVisibility('workExperience')">-</button></h2>
+                <h2>Work Experience</h2>
                 <div ng-repeat="job in data.workExperience">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h2 class="panel-title">{{job.company}}</h2> </div>
-                        <div ng-class="workExperienceState" class="panel-body">
-                            <p class="pull-right">{{job.jobDetails.fromDate}}-{{job.jobDetails.toDate}}</p>
-                            <p>{{job.jobDetails.position}}</p>
-                            <ul ng-repeat="details in job.jobDetails.positionDetails">
-                                <li>{{details.text}}</li>
-                                <ul ng-repeat="item in details.items">
-                                    <li>{{item.text}}</li>
+                        <uib-accordion close-others="oneAtATime">
+                            <div uib-accordion-group class="panel-default" is-open="status.open">
+                                <uib-accordion-heading>{{job.company}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                                <p class="pull-right">{{job.jobDetails.fromDate}}-{{job.jobDetails.toDate}}</p>
+                                <p>{{job.jobDetails.position}}</p>
+                                <ul ng-repeat="details in job.jobDetails.positionDetails">
+                                    <li>{{details.text}}</li>
+                                    <ul ng-repeat="item in details.items">
+                                        <li>{{item.text}}</li>
+                                    </ul>
                                 </ul>
-                            </ul>
-                        </div>
+                            </div>
+                        </uib-accordion>
                     </div>
                 </div>
-                <h2>Work Skills<button class="btn-primary pull-right" ng-click="changeVisibility('workSkills')">-</button></h2>
+                <h2>Work Skills</h2>
                 <div ng-repeat="skill in data.workSkills">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h2 class="panel-title">{{skill.skillType}}</h2> </div>
-                        <div ng-class="workSkillsState" class="panel-body">
-                            <ul ng-repeat="list in skill.skillList">
-                                <li>{{list.text}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <h2>Education<button class="btn-primary pull-right" ng-click="changeVisibility('education')">-</button></h2>
-                <div ng-repeat="edu in data.education">
-                    <div ng-class="educationState" class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h2 class="panel-title">{{edu.name}}</h2> </div>
-                        <div class="panel-body">
-                            <p>{{edu.fromDate}}</p>
-                            <p>{{edu.toDate}}</p>
-                            <div ng-repeat="qual in edu.qualification">
-                                <p>{{qual.name}}</p>
-                                <p>{{qual.text}}</p>
+                        <uib-accordion close-others="oneAtATime">
+                            <div uib-accordion-group class="panel-default" is-open="status.open">
+                                <uib-accordion-heading>{{skill.skillType}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                                <div class="panel-body">
+                                    <ul ng-repeat="list in skill.skillList">
+                                        <li>{{list.text}}</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        </uib-accordion>
                     </div>
                 </div>
-                <h2>Personal Interests<button class="btn-primary pull-right" ng-click="changeVisibility('personalInterests')">-</button></h2>
+                <h2>Education</h2>
+                <div ng-repeat="edu in data.education">
+                    <div class="panel panel-primary">
+                        <uib-accordion close-others="oneAtATime">
+                            <div uib-accordion-group class="panel-default" is-open="status.open">
+                                <uib-accordion-heading>{{edu.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                                <div class="panel-body">
+                                    <p>{{edu.fromDate}}</p>
+                                    <p>{{edu.toDate}}</p>
+                                    <div ng-repeat="qual in edu.qualification">
+                                        <p>{{qual.name}}</p>
+                                        <p>{{qual.text}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-accordion>
+                    </div>
+                </div>
+                <h2>Personal Interests</h2>
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h2 class="panel-title"></h2> </div>
-                    <div ng-class="personalInterestsState" class="panel-body">{{data.personalInterests}}</div>
+                    <uib-accordion close-others="oneAtATime">
+                        <div uib-accordion-group class="panel-default" is-open="status.open">
+                            <uib-accordion-heading>Hobbies and Interests<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                            <div class="panel-body">{{data.personalInterests}}</div>
+                        </div>
+                    </uib-accordion>
                 </div>
             </div>
         </div>
