@@ -4,7 +4,7 @@ body {
 
 h1 {
     text-align: center;
-    font-weight: 300;
+    font-weight: bold;
 }
 
 h2 {
@@ -16,10 +16,23 @@ h2 {
     margin-top: 1em;
     margin-left: 2em;
     margin-right: 1em;
+    margin-bottom: 1em;
     padding-top: 1em;
     padding-left: 1em;
     padding-right: 1em;
     -webkit-border-radius: 10px;
+}
+
+
+.panel-primary:hover {
+    background-color: ghostwhite;
+}
+
+.accordion-heading{
+    color: aquamarine;
+}
+.bold{
+    font-weight: bold;
 }
 
 .panel-heading {
@@ -34,4 +47,16 @@ h2 {
 
 label {
     font-weight: bold
+}
+
+td{
+    padding-left: 1em;
+}
+
+.contactInfo{
+    margin-bottom: 1em;
+}
+
+.positionText{
+    font-weight: bold;
 }

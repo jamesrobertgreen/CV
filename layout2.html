@@ -24,21 +24,35 @@
                     <h1>{{data.name}}</h1>
                     <h2>Contact Information</h2>
                     <div class="panel panel-primary">
-                        <div>
-                            <label>Address:</label> {{data.contactInformation.address}}</div>
-                        <div>
-                            <label>Telphone Number:</label> <a href="tel:{{data.contactInformation.telephoneNumber}}">{{data.contactInformation.telephoneNumber}}</a></div>
-                        <div>
-                            <label>Email Address:</label> <a href="mailto:{{data.contactInformation.emailAddress}}">{{data.contactInformation.emailAddress}}</a></div>
+                        <table class="contactInfo">
+                            <tr>
+                                <td>
+                                    <label>Address:</label>
+                                </td>
+                                <td>{{data.contactInformation.address}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Telphone Number:</label>
+                                </td>
+                                <td><a href="tel:{{data.contactInformation.telephoneNumber}}">{{data.contactInformation.telephoneNumber}}</a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Email Address:</label>
+                                </td>
+                                <td><a href="mailto:{{data.contactInformation.emailAddress}}">{{data.contactInformation.emailAddress}}</a></td>
+                            </tr>
+                        </table>
                     </div>
                     <h2>Work Experience</h2>
                     <div ng-repeat="job in data.workExperience">
                         <div class="panel panel-primary">
                             <uib-accordion close-others="oneAtATime">
                                 <div uib-accordion-group class="panel-default" is-open="status.open">
-                                    <uib-accordion-heading>{{job.company}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                                    <uib-accordion-heading class = "accordion-heading">{{job.company}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
                                     <p class="pull-right">{{job.jobDetails.fromDate}}-{{job.jobDetails.toDate}}</p>
-                                    <p>{{job.jobDetails.position}}</p>
+                                    <p class="positionText">{{job.jobDetails.position}}</p>
                                     <ul ng-repeat="details in job.jobDetails.positionDetails">
                                         <li>{{details.text}}</li>
                                         <ul ng-repeat="item in details.items">
@@ -54,7 +68,7 @@
                         <div class="panel panel-primary">
                             <uib-accordion close-others="oneAtATime">
                                 <div uib-accordion-group class="panel-default" is-open="status.open">
-                                    <uib-accordion-heading>{{skill.skillType}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                                    <uib-accordion-heading class = "accordion-heading">{{skill.skillType}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
                                     <div class="panel-body">
                                         <ul ng-repeat="list in skill.skillList">
                                             <li>{{list.text}}</li>
@@ -69,13 +83,14 @@
                         <div class="panel panel-primary">
                             <uib-accordion close-others="oneAtATime">
                                 <div uib-accordion-group class="panel-default" is-open="status.open">
-                                    <uib-accordion-heading>{{edu.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                                    <uib-accordion-heading class = "accordion-heading">{{edu.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
                                     <div class="panel-body">
-                                        <p>{{edu.fromDate}}</p>
-                                        <p>{{edu.toDate}}</p>
+                                        <p class="pull-right">{{edu.fromDate}}-{{edu.toDate}}</p>
                                         <div ng-repeat="qual in edu.qualification">
-                                            <p>{{qual.name}}</p>
-                                            <p>{{qual.text}}</p>
+                                            <span><p class="bold">{{qual.name}}</p> {{qual.text}}</span>
+                                            <br>
+                                            <br>
+                                            <br>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +101,7 @@
                     <div class="panel panel-primary personal">
                         <uib-accordion close-others="oneAtATime">
                             <div uib-accordion-group class="panel-default" is-open="status.open">
-                                <uib-accordion-heading>Hobbies and Interests<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
+                                <uib-accordion-heading class = "accordion-heading">Hobbies and Interests<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> </uib-accordion-heading>
                                 <div class="panel-body">{{data.personalInterests}}</div>
                             </div>
                         </uib-accordion>
